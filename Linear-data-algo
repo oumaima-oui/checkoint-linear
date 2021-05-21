@@ -1,0 +1,63 @@
+ALGORITHM algorithm_name
+VAR
+    tab : ARRAY_OF INTEGER[5];
+    pos,elt : INTEGER;
+    a : ARRAY_OF INTEGER[M][N];
+    b : ARRAY_OF INTEGER[M][O];
+    c : ARRAY_OF INTEGER[M][O];
+
+    str: STRING[]:= "loveyour"
+    str1,str2:String[50];
+    Person :	STRUCT
+    cin : INTEGER;
+    name : STRING;
+    age: INTEGER;
+    END_STRUCT
+    tab : ARRAY_OF Person[10];  
+
+
+     state_stack : CHAR; 
+    c : CHAR := ' ';
+    stk : STACK;
+    wrong : BOOLEAN := FALSE;
+
+    htab:HASH_TABLE<INTEGER,STRING>
+
+    List :	STRUCT
+    data : INTEGER; 
+    next : ^List;
+
+    END_STRUCT
+
+    first: ^List :=NULL 
+    p: ^List :=NULl
+    c:CHAR;
+    i:INTEGER:=0;                
+
+BEGIN   
+
+    FOR i FROM 0 TO tab.length-1   DO
+        read(tab[i])
+    END_FOR
+      j := tab.length-1;
+    WHILE (j >= pos) DO
+        tab[j+1] := tab[j]; 
+        j := j-1; 
+    END_WHILE
+
+    tab[pos] := elt;
+
+    FOR i FROM 0 TO M-1   DO
+        FOR j FROM 0 TO N-1   DO
+            read(tab[i][j])
+        END_FOR
+    END_FOR
+
+    FOR i FROM 0 TO M-1  DO
+        FOR j FROM 0 TO O-1  DO
+            FOR k FROM 0 TO N-1  DO
+                c[i][j]:=c[i][j]+a[i][k]*b[k][j]
+            END_FOR
+        END_FOR
+    END_FOR
+
